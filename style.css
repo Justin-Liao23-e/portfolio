@@ -1,0 +1,372 @@
+/* Fonts and Basic Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+    --bg-color: #ffffff; /* default background color */
+    --text-color: #000000; /* default text color */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--text-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #007aff;
+}
+
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-switcher button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    color: var(--text-color);
+}
+
+.theme-switcher button:hover {
+    color: #007aff;
+}
+
+/* Main Content */
+main {
+    padding: 50px;
+}
+
+.home-intro {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.intro-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s;
+}
+
+.intro-image img:hover {
+    transform: scale(1.05);
+}
+
+.intro-text h1 {
+    font-size: 36px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+/* Projects and Interests */
+.projects, .interests {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-list, .interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.project-item, .interest-item {
+    flex: 1 1 calc(33% - 30px);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.project-item:hover, .interest-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.project-item h2, .interest-item h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.project-item p, .interest-item p {
+    font-size: 16px;
+}
+
+.load-more {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.load-more:hover {
+    background: currentColor;
+    color: #fff;
+}
+
+/* Contact */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 15px;
+    font-size: 18px;
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background: #005bb5;
+}
+
+.contact .social-media {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.contact .social-media a {
+    font-size: 24px;
+    color: currentColor;
+    transition: color 0.3s;
+}
+
+.contact .social-media a:hover {
+    color: #007aff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Mute/Unmute Button */
+#music-control {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#music-control button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+#music-control button:hover {
+    background: var(--text-color);
+    color: #fff;
+}
+
+/* Animated Shining Line */
+.animated-line {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(270deg, transparent, var(--text-color), transparent);
+    background-size: 200%;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+/* Apply colors to elements */
+nav, footer, .load-more, #music-control button {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+.contact input, .contact textarea {
+    border: 1px solid var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-item, .interest-item {
+        flex: 1 1 calc(50% - 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-intro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item, .interest-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Light Mode */
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+body.light-mode .project-item, body.light-mode .interest-item {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .animated-line {
+    background: linear-gradient(90deg, transparent, #000, transparent);
+}
+
+body.light-mode .contact input, body.light-mode .contact textarea {
+    border: 1px solid #000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+body.dark-mode .project-item, body.dark-mode .interest-item {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .animated-line {
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+body.dark-mode .contact input, body.dark-mode .contact textarea {
+    border: 1px solid #fff;
+}
+
+/* Disco Mode */
+body.disco-mode {
+    animation: discoBackground 20s infinite;
+}
+
+@keyframes discoBackground {
+    0% { background-color: #ff5733; color: #fff; }
+    20% { background-color: #33ff57; color: #000; }
+    40% { background-color: #3357ff; color: #fff; }
+    60% { background-color: #f333ff; color: #000; }
+    80% { background-color: #ff33a6; color: #fff; }
+    100% { background-color: #ff5733; color: #fff; }
+}
+
+body.disco-mode .animated-line {
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+body.disco-mode .project-item, body.disco-mode .interest-item {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.disco-mode .contact input, body.disco-mode .contact textarea {
+    border: 1px solid #fff;
+}
+
+/* Adjust font color for contrast in Disco Mode */
+body.disco-mode, body.disco-mode h1, body.disco-mode h2, body.disco-mode p, body.disco-mode a {
+    transition: color 0.5s;
+}
