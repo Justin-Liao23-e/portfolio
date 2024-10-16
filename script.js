@@ -101,7 +101,10 @@ function loadProjects() {
     }
     projectsLoaded += itemsPerLoad;
     if (projectsLoaded >= projects.length) {
-        document.getElementById('load-more-projects').style.display = 'none';
+        const loadMoreButton = document.getElementById('load-more-projects');
+        if (loadMoreButton) {
+            loadMoreButton.style.display = 'none';
+        }
     }
 }
 
@@ -120,11 +123,46 @@ function loadInterests() {
     }
     interestsLoaded += itemsPerLoad;
     if (interestsLoaded >= interests.length) {
-        document.getElementById('load-more-interests').style.display = 'none';
+        const loadMoreButton = document.getElementById('load-more-interests');
+        if (loadMoreButton) {
+            loadMoreButton.style.display = 'none';
+        }
     }
 }
 
+// Carousel Functionality
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+const totalImages = images.length;
+
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
+
+function showImage(index) {
+    images.forEach((img) => {
+        img.classList.remove('active');
+    });
+    images[index].classList.add('active');
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+    showImage(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+    showImage(currentIndex);
+});
+
+// DOMContentLoaded Event
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Theme
+    if (!body.classList.contains('light-mode') && !body.classList.contains('dark-mode') && !body.classList.contains('disco-mode')) {
+        body.classList.add('light-mode');
+    }
+
+    // Initialize Projects and Interests
     if (document.getElementById('load-more-projects')) {
         loadProjects();
         document.getElementById('load-more-projects').addEventListener('click', loadProjects);
@@ -133,6 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('load-more-interests')) {
         loadInterests();
         document.getElementById('load-more-interests').addEventListener('click', loadInterests);
+    }
+
+    // Initialize Carousel
+    if (images.length > 0) {
+        showImage(currentIndex);
     }
 });
 

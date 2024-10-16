@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Justin Liao - Home</title>
+    <title>Reunify AI - Home</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
@@ -28,9 +28,18 @@
     <!-- Main Content -->
     <main>
         <section class="home-intro">
-            <div class="intro-image">
-                <!-- Replace 'your-image.jpg' with the path to your picture -->
-                <img src="images/your-image.jpg" alt="Your Name">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- Add your images here -->
+                    <img src="Profile.jpg" alt="Image 1" class="carousel-image active">
+                    <img src="SuperBackground.jpg" alt="Image 2" class="carousel-image">
+                    <img src="images/image3.jpg" alt="Image 3" class="carousel-image">
+                    <!-- Add more images as needed -->
+                </div>
+                <div class="carousel-buttons">
+                    <button id="prev-button"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-button"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
             <div class="intro-text">
                 <h1>Welcome to My Portfolio</h1>
@@ -57,7 +66,7 @@
     <!-- Audio Element -->
     <audio id="disco-music" loop>
         <!-- Replace 'your-music.mp3' with the path to your MP3 file -->
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="audio/your-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 

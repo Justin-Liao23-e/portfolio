@@ -3,18 +3,18 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     transition: background-color 0.5s, color 0.5s;
-    --bg-color: #ffffff; /* default background color */
-    --text-color: #000000; /* default text color */
+    /* Removed --bg-color and --text-color from here */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    /* Set default background and text colors */
+    background-color: #ffffff;
+    color: #000000;
 }
 
 a {
     text-decoration: none;
-    color: var(--text-color);
+    color: inherit; /* Use inherit to ensure link colors change with text */
 }
 
 img {
@@ -58,7 +58,7 @@ nav {
     position: absolute;
     width: 0%;
     height: 2px;
-    background: var(--text-color);
+    background: currentColor;
     left: 0;
     bottom: -5px;
     transition: width 0.3s;
@@ -88,7 +88,7 @@ nav {
     background: none;
     font-size: 16px;
     transition: color 0.3s;
-    color: var(--text-color);
+    color: inherit;
 }
 
 .theme-switcher button:hover {
@@ -100,31 +100,74 @@ main {
     padding: 50px;
 }
 
-.home-intro {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.intro-image img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    transition: transform 0.3s;
-}
-
-.intro-image img:hover {
-    transform: scale(1.05);
-}
-
-.intro-text h1 {
-    font-size: 36px;
-}
-
-.intro-text p {
-    font-size: 18px;
+/* Carousel Styles (if applicable) */
+.carousel-container {
+    position: relative;
     max-width: 600px;
+    margin: 0 auto;
+    flex: 1 1 60%;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-buttons button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-buttons i {
+    font-size: 24px;
+}
+
+/* Adjustments for Modes */
+body.light-mode .carousel-buttons button {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+body.light-mode .carousel-buttons button:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.disco-mode .carousel-buttons button {
+    background: rgba(255, 255, 255, 0.5);
+    color: inherit;
+}
+
+body.disco-mode .carousel-buttons button:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /* Projects and Interests */
@@ -189,8 +232,10 @@ main {
 .contact input, .contact textarea {
     padding: 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid currentColor;
     border-radius: 5px;
+    background: transparent;
+    color: inherit;
 }
 
 .contact button {
@@ -216,7 +261,7 @@ main {
 
 .contact .social-media a {
     font-size: 24px;
-    color: currentColor;
+    color: inherit;
     transition: color 0.3s;
 }
 
@@ -243,15 +288,15 @@ footer {
     padding: 10px 20px;
     font-size: 16px;
     background: none;
-    border: 2px solid var(--text-color);
+    border: 2px solid currentColor;
     border-radius: 5px;
     cursor: pointer;
-    color: var(--text-color);
+    color: inherit;
     transition: background 0.3s, color 0.3s;
 }
 
 #music-control button:hover {
-    background: var(--text-color);
+    background: currentColor;
     color: #fff;
 }
 
@@ -260,9 +305,9 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 10px;
+    height: 8px; /* Adjusted height for thickness */
     width: 100%;
-    background: linear-gradient(270deg, transparent, var(--text-color), transparent);
+    background: linear-gradient(270deg, transparent, currentColor, transparent);
     background-size: 200%;
     animation: shine 3s linear infinite;
 }
@@ -270,20 +315,6 @@ footer {
 @keyframes shine {
     0% { background-position: 0%; }
     100% { background-position: 200%; }
-}
-
-/* Apply colors to elements */
-nav, footer, .load-more, #music-control button {
-    color: var(--text-color);
-    border-color: var(--text-color);
-}
-
-a {
-    color: var(--text-color);
-}
-
-.contact input, .contact textarea {
-    border: 1px solid var(--text-color);
 }
 
 /* Responsive Design */
@@ -306,8 +337,8 @@ a {
 
 /* Light Mode */
 body.light-mode {
-    --bg-color: #ffffff;
-    --text-color: #000000;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 body.light-mode .project-item, body.light-mode .interest-item {
@@ -324,8 +355,8 @@ body.light-mode .contact input, body.light-mode .contact textarea {
 
 /* Dark Mode */
 body.dark-mode {
-    --bg-color: #000000;
-    --text-color: #ffffff;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 body.dark-mode .project-item, body.dark-mode .interest-item {
@@ -346,16 +377,36 @@ body.disco-mode {
 }
 
 @keyframes discoBackground {
-    0% { background-color: #ff5733; color: #fff; }
-    20% { background-color: #33ff57; color: #000; }
-    40% { background-color: #3357ff; color: #fff; }
-    60% { background-color: #f333ff; color: #000; }
-    80% { background-color: #ff33a6; color: #fff; }
-    100% { background-color: #ff5733; color: #fff; }
+    0% {
+        background-color: #ff5733;
+        color: #ffffff;
+    }
+    20% {
+        background-color: #33ff57;
+        color: #000000;
+    }
+    40% {
+        background-color: #3357ff;
+        color: #ffffff;
+    }
+    60% {
+        background-color: #f333ff;
+        color: #000000;
+    }
+    80% {
+        background-color: #ff33a6;
+        color: #ffffff;
+    }
+    100% {
+        background-color: #ff5733;
+        color: #ffffff;
+    }
 }
 
-body.disco-mode .animated-line {
-    background: linear-gradient(90deg, transparent, #fff, transparent);
+/* Adjust elements during Disco Mode */
+body.disco-mode, body.disco-mode h1, body.disco-mode h2, body.disco-mode p, body.disco-mode a, body.disco-mode .logo, body.disco-mode .nav-links a, body.disco-mode .theme-switcher button, body.disco-mode .contact input, body.disco-mode .contact textarea, body.disco-mode .contact .social-media a, body.disco-mode footer, body.disco-mode .load-more, body.disco-mode #music-control button {
+    color: inherit;
+    transition: color 0.5s, background-color 0.5s;
 }
 
 body.disco-mode .project-item, body.disco-mode .interest-item {
@@ -363,10 +414,9 @@ body.disco-mode .project-item, body.disco-mode .interest-item {
 }
 
 body.disco-mode .contact input, body.disco-mode .contact textarea {
-    border: 1px solid #fff;
+    border: 1px solid currentColor;
 }
 
-/* Adjust font color for contrast in Disco Mode */
-body.disco-mode, body.disco-mode h1, body.disco-mode h2, body.disco-mode p, body.disco-mode a {
-    transition: color 0.5s;
+body.disco-mode .animated-line {
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
 }
