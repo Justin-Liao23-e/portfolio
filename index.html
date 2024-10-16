@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Reunify AI - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Justin Liao - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Reunify AI</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="interests.html">Interests</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="theme-switcher">
-            <button id="light-mode">Light Mode</button>
-            <button id="dark-mode">Dark Mode</button>
-            <button id="disco-mode">Disco Mode</button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        <section class="home-intro">
-            <div class="carousel-container">
-                <div class="carousel">
-                    <!-- Add your images here -->
-                    <img src="Profile.jpg" alt="Image 1" class="carousel-image active">
-                    <!-- Add more images as needed -->
-                </div>
-                <div class="carousel-buttons">
-                    <button id="prev-button"><i class="fas fa-chevron-left"></i></button>
-                    <button id="next-button"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-            <div class="intro-text">
-                <h1>Welcome to My Portfolio</h1>
-                <p>
-                    Hi, I'm [Your Name], a software engineer with a passion for creating innovative solutions. With expertise in web development, I enjoy building clean and user-friendly applications. Explore my projects and interests to learn more about my work.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
-    <div id="music-control" style="display: none;">
-        <button id="mute-button">Mute Music</button>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Justin Liao</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="theme-switcher">
+      <button id="light-mode">Light Mode</button>
+      <button id="dark-mode">Dark Mode</button>
+      <button id="disco-mode">Disco Mode</button>
     </div>
+  </nav>
 
-    <!-- Animated Shining Line -->
-    <div class="animated-line"></div>
+  <!-- Main Content -->
+  <main>
+    <section class="home-intro">
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Add your images here -->
+          <img src="Profile.jpg" alt="Image 1" class="carousel-image active">
+          <img src="SuperBackground.jpg" alt="Image 2" class="carousel-image">
+          <img src="Profile2.jpg" alt="Image 3" class="carousel-image">
+          <!-- Add more images as needed -->
+        </div>
+        <div class="carousel-buttons">
+          <button id="prev-button">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="next-button">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="intro-text">
+        <h1>Welcome to My Portfolio</h1>
+        <p>
+          Hi, I'm [Your Name], a software engineer with a passion for creating innovative solutions. With expertise in web development, I enjoy building clean and user-friendly applications. Explore my projects and interests to learn more about my work.
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Reunify AI</p>
-    </footer>
+  <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
+  <div id="music-control" style="display: none;">
+    <button id="mute-button">Mute Music</button>
+  </div>
 
-    <!-- Audio Element -->
-    <audio id="disco-music" loop>
-        <!-- Replace 'your-music.mp3' with the path to your MP3 file -->
-        <source src="audio/your-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Animated Shining Line -->
+  <div class="animated-line"></div>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Reunify AI</p>
+  </footer>
+
+  <!-- Audio Element 
+  <audio id="disco-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>-->
+
+  <script src="script.js"></script>
 </body>
 </html>

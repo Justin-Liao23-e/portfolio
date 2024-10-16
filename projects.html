@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Justin Liao - Projects</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Justin Liao - Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <!-- Same as in index.html -->
-        <div class="logo">Reunify AI</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="interests.html">Interests</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="theme-switcher">
-            <button id="light-mode">Light Mode</button>
-            <button id="dark-mode">Dark Mode</button>
-            <button id="disco-mode">Disco Mode</button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        <section class="projects">
-            <h1>Projects</h1>
-            <div class="project-list" id="project-list">
-                <!-- Project Items will be loaded here -->
-            </div>
-            <button id="load-more-projects" class="load-more">Load More</button>
-        </section>
-    </main>
-
-    <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
-    <div id="music-control" style="display: none;">
-        <button id="mute-button">Mute Music</button>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Justin Liao</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="theme-switcher">
+      <button id="light-mode">Light Mode</button>
+      <button id="dark-mode">Dark Mode</button>
+      <button id="disco-mode">Disco Mode</button>
     </div>
+  </nav>
 
-    <!-- Animated Shining Line -->
-    <div class="animated-line"></div>
+  <!-- Main Content -->
+  <main>
+    <section class="projects">
+      <h1>Projects</h1>
+      <p>Here are some of the projects I've worked on recently. Click "Load More" to see additional projects.</p>
+      <div class="project-list" id="project-list">
+        <!-- Project Items will be loaded here -->
+      </div>
+      <button id="load-more-projects" class="load-more">Load More</button>
+    </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Reunify AI</p>
-    </footer>
+  <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
+  <div id="music-control" style="display: none;">
+    <button id="mute-button">Mute Music</button>
+  </div>
 
-    <!-- Audio Element -->
-    <audio id="disco-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Animated Shining Line -->
+  <div class="animated-line"></div>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Reunify AI</p>
+  </footer>
+
+  <!-- Audio Element 
+  <audio id="disco-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>-->
+
+  <script src="script.js"></script>
 </body>
 </html>

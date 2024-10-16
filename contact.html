@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Justin Liao - Contact</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Justin Liao - Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Reunify AI</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="interests.html">Interests</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-        <div class="theme-switcher">
-            <button id="light-mode">Light Mode</button>
-            <button id="dark-mode">Dark Mode</button>
-            <button id="disco-mode">Disco Mode</button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        <section class="contact">
-            <h1>Contact Me</h1>
-            <p>If you'd like to get in touch, please fill out the form below or reach out via social media.</p>
-            <form action="#" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="social-media">
-                <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
-    <div id="music-control" style="display: none;">
-        <button id="mute-button">Mute Music</button>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Justin Liao</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="theme-switcher">
+      <button id="light-mode">Light Mode</button>
+      <button id="dark-mode">Dark Mode</button>
+      <button id="disco-mode">Disco Mode</button>
     </div>
+  </nav>
 
-    <!-- Animated Shining Line -->
-    <div class="animated-line"></div>
+  <!-- Main Content -->
+  <main>
+    <section class="contact">
+      <h1>Contact Me</h1>
+      <p>
+        If you'd like to get in touch, please fill out the form below or reach out via social media.
+      </p>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-media">
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:your.email@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Reunify AI</p>
-    </footer>
+  <!-- Mute/Unmute Button (Visible only in Disco Mode) -->
+  <div id="music-control" style="display: none;">
+    <button id="mute-button">Mute Music</button>
+  </div>
 
-    <!-- Audio Element -->
-    <audio id="disco-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Animated Shining Line -->
+  <div class="animated-line"></div>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Reunify AI</p>
+  </footer>
+
+  <!-- Audio Element 
+  <audio id="disco-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>-->
+
+  <script src="script.js"></script>
 </body>
 </html>
