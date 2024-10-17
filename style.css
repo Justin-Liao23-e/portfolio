@@ -112,89 +112,80 @@ body {
     margin-top: 30px;
   }
   
-/* Adjusted Project and Interest Items (Spec 3) */
+/* Adjusted Project and Interest Items */
 .project-item, .interest-item {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    background: linear-gradient(135deg, #f0f0f0, #ffffff);
-    padding: 0;
-    border-radius: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .project-item:hover, .interest-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-item img, .interest-item img {
-    width: 40%;
-    transition: transform 0.3s;
-    border-radius: 20px 0 0 20px;
-  }
-  
-  .project-item:hover img, .interest-item:hover img {
-    transform: scale(1.05);
-  }
-  
-  .project-item .content, .interest-item .content {
-    padding: 30px;
-    flex: 1;
-  }
-  
-  .project-item h2, .interest-item h2 {
-    font-size: 28px;
-    margin: 0 0 10px;
-    color: #333;
-    font-weight: 600;
-  }
-  
-  .project-item p, .interest-item p {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-  }
-  
-  .project-item .view-more {
-    margin-top: 15px;
-    display: inline-block;
-    font-size: 18px;
-    color: #007aff;
-    transition: color 0.3s;
-    font-weight: 500;
-  }
-  
-  .project-item .view-more:hover {
-    color: #005bb5;
-  }
-  
-  .load-more {
-    padding: 15px 30px;
-    font-size: 18px;
-    background: #007aff;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    margin: 40px auto 0;
-    display: block;
-    width: fit-content;
-  }
-  
-  .load-more:hover {
-    background: #005bb5;
-    transform: translateY(-5px);
-  }
-  
-  .load-more:active {
-    transform: translateY(0);
-  }
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(135deg, #e6e6e6, #ffffff); /* Updated background for light mode */
+  padding: 0;
+  border-radius: 20px; 
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Hover effect for projects and interests */
+.project-item:hover, .interest-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow for more emphasis */
+}
+
+/* Images within Project and Interest Items */
+.project-item img, .interest-item img {
+  width: 40%; 
+  transition: transform 0.3s;
+  border-radius: 20px 0 0 20px;
+}
+
+.project-item:hover img, .interest-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Text Content within Project and Interest Items */
+.project-item .content, .interest-item .content {
+  padding: 30px;
+  flex: 1;
+}
+
+.project-item h2, .interest-item h2 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.project-item p, .interest-item p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Restyled Load More/Less Button */
+.load-more {
+  padding: 15px 180px; /* Increased padding for a longer button */
+  font-size: 18px;
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Less rounded edges */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  margin: 40px auto 0;
+  display: block;
+  width: fit-content; /* Allow button to fit content */
+}
+
+.load-more:hover {
+  background: #005bb5;
+  transform: translateY(-5px);
+}
+
+.load-more:active {
+  transform: translateY(0);
+}
   
   /* Contact */
   .contact {
@@ -258,81 +249,98 @@ body {
     color: #007aff;
   }
   
-  /* Responsive Design Adjustments */
-  @media (max-width: 1024px) {
-    .project-item, .interest-item {
-      flex: 1 1 calc(33% - 30px);
-    }
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+  .project-item, .interest-item {
+      flex-direction: column; /* Items stack vertically on smaller screens */
+      align-items: flex-start; /* Align content to the top */
   }
-  
-  @media (max-width: 768px) {
-    .project-item, .interest-item {
-      flex-direction: column;
-    }
-  
-    .project-item img, .interest-item img {
-      width: 100%;
-      border-radius: 20px 20px 0 0;
-    }
-  
-    .project-item .content, .interest-item .content {
-      padding: 20px;
-    }
-  
-    .carousel-container, .intro-text {
-      max-width: 100%;
-    }
-  
-    .home-intro {
-      flex-direction: column;
-    }
+
+  .project-item img, .interest-item img {
+      width: 100%; /* Make image take full width */
+      border-radius: 20px 20px 0 0; /* Adjust border radius for vertical stacking */
   }
-  
-  @media (max-width: 480px) {
-    main {
+
+  .project-item .content, .interest-item .content {
       padding: 20px;
-    }
-  
-    .project-item h2, .interest-item h2 {
+  }
+}
+
+@media (max-width: 768px) {
+  .project-item, .interest-item {
+      width: 100%; /* Ensure full width domination on smaller screens */
+  }
+
+  .project-item img, .interest-item img {
+      width: 100%; /* Image covers the full width of the item */
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+      padding: 20px;
+  }
+
+  .project-item h2, .interest-item h2 {
       font-size: 24px;
-    }
-  
-    .project-item p, .interest-item p {
+  }
+
+  .project-item p, .interest-item p {
       font-size: 16px;
-    }
-  
-    .project-item .view-more, .load-more {
+  }
+
+  .project-item .view-more, .load-more {
       font-size: 16px;
-    }
-  
-    .carousel-buttons button {
-      width: 40px;
-      height: 40px;
-    }
-  
-    .carousel-buttons i {
-      font-size: 20px;
-    }
   }
-  
-  /* Adjustments for Modes */
-  body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
+
+  /* Make the load more button slightly longer on smaller screens */
+  .load-more {
+      padding: 12px 60px;
+      border-radius: 8px; /* Slightly reduce the rounded corners */
   }
+}
   
-  body.light-mode .project-item, body.light-mode .interest-item {
-    background: #f9f9f9;
-  }
-  
-  body.dark-mode {
-    background-color: #000000;
-    color: #ffffff;
-  }
-  
-  body.dark-mode .project-item, body.dark-mode .interest-item {
-    background: #1a1a1a;
-  }
+/* Adjustments for Modes */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode .project-item, body.light-mode .interest-item {
+  background: #f9f9f9;
+  color: #000000; /* Ensure text is black in light mode */
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.dark-mode .project-item, body.dark-mode .interest-item {
+  background: #1a1a1a;
+  color: #ffffff; /* Ensure text is white in dark mode for contrast */
+}
+
+body.dark-mode .project-item h2, body.dark-mode .interest-item h2 {
+  color: #ffffff; /* Make sure the headings are also white for contrast */
+}
+
+body.dark-mode .project-item p, body.dark-mode .interest-item p {
+  color: #cccccc; /* A slightly lighter color for paragraph text in dark mode */
+}
+
+body.dark-mode .project-item .view-more, body.dark-mode .interest-item .view-more {
+  color: #4da6ff; /* A contrasting blue color for the "View More" links */
+}
+
+body.dark-mode .project-item .view-more:hover, body.dark-mode .interest-item .view-more:hover {
+  color: #80c1ff; /* Slightly lighter blue on hover */
+}
+
+/* Ensure images remain bright in dark mode */
+body.dark-mode .project-item img, body.dark-mode .interest-item img {
+  filter: brightness(1.1); /* Slightly brighten the images in dark mode */
+}
   
   body.disco-mode {
     animation: discoBackground 20s infinite;
