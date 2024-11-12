@@ -55,7 +55,7 @@ document.getElementById('disco-mode').addEventListener('click', () => setTheme('
 function startDiscoMusic() {
   if (!discoMusic) {
     // Create the audio element dynamically
-    discoMusic = new Audio('music.mp3'); // Replace with your audio file path
+    discoMusic = new Audio('Assets/music.mp3'); //music file path
     discoMusic.loop = true;
 
     // Check if music was muted
@@ -111,88 +111,94 @@ if (muteButton) {
 const projects = [
   // 5 initial projects
   {
-    image: 'images/project1.jpg',
-    name: 'Project Alpha',
-    description: 'An innovative solution for modern challenges.',
+    image: 'https://static-00.iconduck.com/assets.00/double-quotes-l-icon-512x393-t3r35hc3.png',
+    name: 'Task AI [in progress...]',
+    date: 'October 2024',
+    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
+  },
+  {
+    image: 'Assets/media/profiles/profile.jpg',
+    name: 'Python Web Scraper [in progress...]',
+    date: 'October 2024',
+    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
     url: '#'
   },
   {
-    image: 'images/project2.jpg',
-    name: 'Project Beta',
+    image: 'Assets/media/portfolio/...',
+    name: 'Stock Market Browser Extension',
+    date: 'October 2024',
+    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
+    url: '#'
+  },
+  {
+    image: 'Assets/media/portfolio/...',
+    name: 'Desktop Organizing Script',
+    date: 'October 2024',
+    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
+    url: '#'
+  },
+  {
+    image: 'Assets/media/portfolio/...',
+    name: 'C++ TikTakToe',
+    date: 'October 2024',
     description: 'A cutting-edge platform for seamless integration.',
     url: '#'
   },
   {
-    image: 'images/project3.jpg',
-    name: 'Project Gamma',
+    image: 'Assets/media/portfolio/...',
+    name: 'C$ Stalker',
+    date: 'October 2024',
     description: 'Revolutionizing the way we interact with technology.',
     url: '#'
   },
   {
-    image: 'images/project4.jpg',
-    name: 'Project Delta',
+    image: 'Assets/media/portfolio/...',
+    name: 'Converters: Decimal to Binary, Octal, and Hexadecimal',
+    date: 'October 2024',
     description: 'Bridging gaps with next-gen solutions.',
     url: '#'
   },
-  {
-    image: 'images/project5.jpg',
-    name: 'Project Epsilon',
-    description: 'Empowering users through intuitive design.',
-    url: '#'
-  },
-  // 2 additional projects to load after clicking "Load More"
-  {
-    image: 'images/project6.jpg',
-    name: 'Project Zeta',
-    description: 'Enhancing productivity with AI-driven tools.',
-    url: '#'
-  },
-  {
-    image: 'images/project7.jpg',
-    name: 'Project Eta',
-    description: 'A new approach to collaborative work.',
-    url: '#'
-  }
 ];
 
 const interests = [
   // 5 initial interests
   {
-    image: 'images/interest1.jpg',
-    name: 'Photography',
-    description: 'Capturing the world one frame at a time.'
+    image: 'Assets/media/...',
+    name: 'Arts',
+    description: 'Capturing the world one frame at a time.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
   },
   {
-    image: 'images/interest2.jpg',
-    name: 'Traveling',
-    description: 'Exploring new cultures and destinations.'
+    image: 'Assets/media/...',
+    name: 'Piano & Singing',
+    description: 'Exploring new cultures and destinations.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
   },
   {
     image: 'images/interest3.jpg',
-    name: 'Cooking',
-    description: 'Experimenting with flavors and cuisines.'
+    name: 'Family & Friends',
+    description: 'Experimenting with flavors and cuisines.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
   },
   {
     image: 'images/interest4.jpg',
-    name: 'Music',
-    description: 'Appreciating rhythms and melodies.'
+    name: 'Reading',
+    description: 'Appreciating rhythms and melodies.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
   },
   {
     image: 'images/interest5.jpg',
-    name: 'Reading',
-    description: 'Diving into different worlds through books.'
-  },
-  // 2 additional interests to load after clicking "Load More"
-  {
-    image: 'images/interest6.jpg',
-    name: 'Gaming',
-    description: 'Immersing in interactive adventures.'
+    name: 'Investing',
+    description: 'Diving into different worlds through books.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
   },
   {
     image: 'images/interest7.jpg',
     name: 'Fitness',
-    description: 'Pursuing a healthy and active lifestyle.'
-  }
+    description: 'Boxing and jogging and gym and golf.',
+    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
+  },
 ];
 
 let projectsExpanded = false;
@@ -210,12 +216,21 @@ function loadProjects() {
     projectItem.innerHTML = `
       <img src="${project.image}" alt="${project.name}">
       <div class="content">
-        <h2>${project.name}</h2>
-        <p>${project.description}</p>
-        <a href="${project.url}" class="view-more">View Project</a>
+        <a href="${project.url}" class="project-name" target="_blank"><h2>${project.name}</h2></a>
+        <p class="project-date">${project.date}</p>
+        <p class="project-description">${project.description}</p>
+        <span class="view-more">View More</span>
       </div>
     `;
     projectList.appendChild(projectItem);
+
+    // Add event listener for "View More" button within this loop
+    const viewMoreButton = projectItem.querySelector('.view-more');
+    const description = projectItem.querySelector('.project-description');
+    viewMoreButton.addEventListener('click', () => {
+      description.classList.toggle('expanded');
+      viewMoreButton.textContent = description.classList.contains('expanded') ? 'View Less' : 'View More';
+    });
   }
 
   // Update button text

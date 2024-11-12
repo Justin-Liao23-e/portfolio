@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Justin Liao - Interests</title>
+  <link rel="stylesheet" href="interests.css">
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a58ede48c2.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon for the browser tab -->
+  <link rel="icon" type="image/png" href="Assets/media/profiles/falcon.jpg">
 </head>
 <body>
   <!-- Navigation -->
@@ -16,6 +19,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="interests.html" class="active">Interests</a></li>
+      <li><a href="activity.html">Activities</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="theme-switcher">
@@ -28,12 +32,44 @@
   <!-- Main Content -->
   <main>
     <section class="interests">
-      <h1>Interests</h1>
-      <p>Beyond coding, I have a variety of interests that keep me inspired and energized. Feel free to explore them below.</p>
-      <div class="interest-list" id="interest-list">
-        <!-- Interest Items will be loaded here -->
+      <h1>My Interests</h1>
+      <div class="interest-list">
+        <!-- Interest Item 1 -->
+        <a href="https://example.com/interest1" class="interest-item" style="background-image: url('Assets/media/profiles/profile.jpg');" target="_blank">
+          <div class="content">
+            <h2>Interest 1</h2>
+            <p>Short description of Interest 1.</p>
+          </div>
+        </a>
+        <!-- Interest Item 2 -->
+        <a href="https://example.com/interest2" class="interest-item" style="background-image: url('https://static-00.iconduck.com/assets.00/double-quotes-l-icon-512x393-t3r35hc3.png');" target="_blank">
+          <div class="content">
+            <h2>Interest 2</h2>
+            <p>Short description of Interest 2.</p>
+          </div>
+        </a>
+        <!-- Interest Item 3 -->
+        <a href="https://example.com/interest3" class="interest-item" style="background-image: url('Assets/media/interests/interest3.jpg');" target="_blank">
+          <div class="content">
+            <h2>Interest 3</h2>
+            <p>Short description of Interest 3.</p>
+          </div>
+        </a>
+        <!-- Interest Item 4 -->
+        <a href="https://example.com/interest4" class="interest-item" style="background-image: url('Assets/media/interests/interest4.jpg');" target="_blank">
+          <div class="content">
+            <h2>Interest 4</h2>
+            <p>Short description of Interest 4.</p>
+          </div>
+        </a>
+        <!-- Interest Item 5 -->
+        <a href="https://example.com/interest5" class="interest-item" style="background-image: url('Assets/media/interests/interest5.jpg');" target="_blank">
+          <div class="content">
+            <h2>Interest 5</h2>
+            <p>Short description of Interest 5.</p>
+          </div>
+        </a>
       </div>
-      <button id="load-more-interests" class="load-more">Load More</button>
     </section>
   </main>
 
@@ -50,6 +86,7 @@
     <p>&copy; Reunify AI</p>
   </footer>
 
+  <!-- Include your script.js for theme switching and other functionalities -->
   <script src="script.js"></script>
 </body>
 </html>

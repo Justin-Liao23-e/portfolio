@@ -95,16 +95,16 @@ body {
   
   /* Main Content */
   main {
-    padding: 50px;
+    padding: 50px 20px;  
   }
   
-  .projects, .interests {
+  .projects{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .project-list, .interest-list {
+  .project-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -112,52 +112,112 @@ body {
     margin-top: 30px;
   }
   
-/* Adjusted Project and Interest Items */
-.project-item, .interest-item {
+/* Project Items */
+.project-item {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background: linear-gradient(135deg, #e6e6e6, #ffffff); /* Updated background for light mode */
+  background: linear-gradient(135deg, #e6e6e6, #ffffff);
   padding: 0;
   border-radius: 20px; 
   transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 30px;
+  cursor: default; /* Default cursor */
 }
 
-/* Hover effect for projects and interests */
-.project-item:hover, .interest-item:hover {
+/* Hover effect for projects */
+.project-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow for more emphasis */
 }
 
-/* Images within Project and Interest Items */
-.project-item img, .interest-item img {
-  width: 40%; 
-  transition: transform 0.3s;
+/* Images within Project */
+.project-item img {
+  width: 300px; 
+  height: auto;
+  object-fit: cover;
   border-radius: 20px 0 0 20px;
 }
 
-.project-item:hover img, .interest-item:hover img {
+.project-item:hover img {
   transform: scale(1.05);
 }
 
-/* Text Content within Project and Interest Items */
-.project-item .content, .interest-item .content {
-  padding: 30px;
+/* Text Content within Project */
+.project-item .content {
+  padding: 20px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.project-item h2, .interest-item h2 {
+/* Project Name and Date */
+.project-item h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.project-item h2:hover {
+  color: #007aff; /* Same blue as "Load More" button */
+}
+
+.project-name {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.project-date {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+  max-height: 3.6em; /* Limit to 3 lines */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  cursor: text; /* I-beam cursor */
+}
+
+/* Expanded Description */
+.project-description.expanded {
+  max-height: none;
+}
+
+/* View More Link */
+.view-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007aff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.view-more:hover {
+  color: #01458a;
+}
+
+.project-item h2 {
   font-size: 28px;
   margin: 0 0 10px;
   color: #333;
   font-weight: 600;
 }
 
-.project-item p, .interest-item p {
+.project-item p {
   font-size: 18px;
   color: #666;
   line-height: 1.6;
@@ -251,28 +311,65 @@ body {
   
 /* Responsive Design Adjustments */
 @media (max-width: 1024px) {
-  .project-item, .interest-item {
+  .project-item {
       flex-direction: column; /* Items stack vertically on smaller screens */
       align-items: flex-start; /* Align content to the top */
   }
 
-  .project-item img, .interest-item img {
+  .project-item img {
       width: 100%; /* Make image take full width */
       border-radius: 20px 20px 0 0; /* Adjust border radius for vertical stacking */
   }
 
-  .project-item .content, .interest-item .content {
+  .project-item .content {
       padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .project-item, .interest-item {
-      width: 100%; /* Ensure full width domination on smaller screens */
+  .project-item {
+    flex-direction: column;
+    height: auto; /* Allow height to adjust based on content */
   }
 
-  .project-item img, .interest-item img {
-      width: 100%; /* Image covers the full width of the item */
+  .project-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    border-radius: 20px 20px 0 0;
+  }
+
+  .project-item .content {
+    padding: 15px;
+  }
+
+  .home-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .carousel-container,
+  .intro-text {
+    max-width: 100%;
+  }
+
+  .intro-text h1 {
+    font-size: 32px;
+  }
+
+  .intro-text p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .project-item img {
+    width: 400px; /* Increased width to 400px */
+    height: auto; /* Adjust height automatically */
+  }
+
+  .project-item {
+    height: auto; /* Allow container height to adjust based on content */
   }
 }
 
@@ -281,11 +378,11 @@ body {
       padding: 20px;
   }
 
-  .project-item h2, .interest-item h2 {
+  .project-item h2 {
       font-size: 24px;
   }
 
-  .project-item p, .interest-item p {
+  .project-item p {
       font-size: 16px;
   }
 
@@ -306,7 +403,7 @@ body.light-mode {
   color: #000000;
 }
 
-body.light-mode .project-item, body.light-mode .interest-item {
+body.light-mode .project-item {
   background: #f9f9f9;
   color: #000000; /* Ensure text is black in light mode */
 }
@@ -316,29 +413,29 @@ body.dark-mode {
   color: #ffffff;
 }
 
-body.dark-mode .project-item, body.dark-mode .interest-item {
+body.dark-mode .project-item {
   background: #1a1a1a;
   color: #ffffff; /* Ensure text is white in dark mode for contrast */
 }
 
-body.dark-mode .project-item h2, body.dark-mode .interest-item h2 {
+body.dark-mode .project-item h2 {
   color: #ffffff; /* Make sure the headings are also white for contrast */
 }
 
-body.dark-mode .project-item p, body.dark-mode .interest-item p {
+body.dark-mode .project-item p {
   color: #cccccc; /* A slightly lighter color for paragraph text in dark mode */
 }
 
-body.dark-mode .project-item .view-more, body.dark-mode .interest-item .view-more {
+body.dark-mode .project-item .view-more {
   color: #4da6ff; /* A contrasting blue color for the "View More" links */
 }
 
-body.dark-mode .project-item .view-more:hover, body.dark-mode .interest-item .view-more:hover {
+body.dark-mode .project-item .view-more:hover {
   color: #80c1ff; /* Slightly lighter blue on hover */
 }
 
 /* Ensure images remain bright in dark mode */
-body.dark-mode .project-item img, body.dark-mode .interest-item img {
+body.dark-mode .project-item img {
   filter: brightness(1.1); /* Slightly brighten the images in dark mode */
 }
   
@@ -379,7 +476,7 @@ body.dark-mode .project-item img, body.dark-mode .interest-item img {
     transition: color 0.5s, background-color 0.5s;
   }
   
-  body.disco-mode .project-item, body.disco-mode .interest-item {
+  body.disco-mode .project-item {
     background: rgba(255, 255, 255, 0.1);
   }
   
@@ -446,7 +543,7 @@ body.dark-mode .project-item img, body.dark-mode .interest-item img {
     flex-wrap: wrap;
     justify-content: center;
   }
-
+  
   .carousel-container {
     position: relative;
     max-width: 500px;
