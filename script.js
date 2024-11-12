@@ -111,53 +111,53 @@ if (muteButton) {
 const projects = [
   // 5 initial projects
   {
-    image: 'https://static-00.iconduck.com/assets.00/double-quotes-l-icon-512x393-t3r35hc3.png',
+    image: '',
     name: 'Task AI [in progress...]',
-    date: 'October 2024',
+    date: 'Oct. 20, 2024 - Present',
     description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAnAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
-    url: 'https://github.com/Justin-Liao23-e/Justin-Liao23-e.github.io_OLD/blob/main/index.html'
+    url: 'https://github.com/Justin-Liao23-e/Task-AI'
   },
   {
-    image: 'Assets/media/profiles/profile.jpg',
+    image: 'Assets/media/profiles/',
     name: 'Python Web Scraper [in progress...]',
-    date: 'October 2024',
+    date: 'Oct. 20, 2024 - Present',
     description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
-    url: '#'
-  },
-  {
-    image: 'Assets/media/portfolio/...',
-    name: 'Stock Market Browser Extension',
-    date: 'October 2024',
-    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
-    url: '#'
+    url: 'https://github.com/Justin-Liao23-e/Web-Data-Scraper'
   },
   {
     image: 'Assets/media/portfolio/...',
     name: 'Desktop Organizing Script',
-    date: 'October 2024',
+    date: 'Oct 24, 2024 - Nov 7, 2024',
     description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
-    url: '#'
+    url: 'https://github.com/Justin-Liao23-e/Desktop-Organizer'
+  },
+  {
+    image: 'Assets/media/portfolio/...',
+    name: 'Stock Market Browser Extension',
+    date: 'Oct 18, 2024 - Oct 24, 2024',
+    description: 'An innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challengesAn innovative solution for modern challenges',
+    url: 'https://github.com/Justin-Liao23-e/Stock-Market-Browser-Extension'
   },
   {
     image: 'Assets/media/portfolio/...',
     name: 'C++ TikTakToe',
-    date: 'October 2024',
+    date: 'Apr 2, 2024',
     description: 'A cutting-edge platform for seamless integration.',
-    url: '#'
+    url: 'https://github.com/Justin-Liao23-e/TikTakToe'
   },
   {
     image: 'Assets/media/portfolio/...',
     name: 'C$ Stalker',
-    date: 'October 2024',
+    date: 'Nov 8, 2024 - Nov 25, 2024',
     description: 'Revolutionizing the way we interact with technology.',
-    url: '#'
+    url: 'https://github.com/ethan-leonard/CS_Stalkers'
   },
   {
     image: 'Assets/media/portfolio/...',
     name: 'Converters: Decimal to Binary, Octal, and Hexadecimal',
-    date: 'October 2024',
+    date: 'March 2021',
     description: 'Bridging gaps with next-gen solutions.',
-    url: '#'
+    url: 'https://github.com/Justin-Liao23-e/Binary-to-Decimal-Converter'
   },
 ];
 
