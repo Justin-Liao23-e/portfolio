@@ -1,0 +1,210 @@
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .back-button {
+    text-decoration: none;
+    color: #007aff;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #007aff;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .back-button:hover {
+    background: #007aff;
+    color: #fff;
+  }
+  
+  main {
+    padding: 30px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .event-block {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .event-block:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-block h2 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+  
+  .event-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 15px;
+  }
+  
+  .event-block p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Media Section Styling */
+  .media-section {
+    margin-bottom: 20px;
+  }
+  
+  .media-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .photo-gallery img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .photo-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  .video-gallery iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Document Download Button */
+  .doc-download .download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007aff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .doc-download .download-button:hover {
+    background: #005bb5;
+  }
+  
+  /* Separation Line */
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .photo-gallery img {
+      width: 100px;
+      height: 70px;
+    }
+  
+    header .logo {
+      font-size: 20px;
+    }
+  
+    .back-button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .event-block h2 {
+      font-size: 24px;
+    }
+  
+    .event-block p {
+      font-size: 14px;
+    }
+  
+    .video-gallery iframe {
+      height: 210px; /* Adjust for smaller screens */
+    }
+  
+    .doc-download .download-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Social Links Styling */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .social-links p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #007aff;
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid #007aff;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .social-icon i {
+    margin-right: 5px;
+  }
+  
+  .social-icon:hover {
+    background: #007aff;
+    color: #fff;
+  }
+  
