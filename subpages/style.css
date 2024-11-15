@@ -76,11 +76,15 @@ h1 {
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .carousel-image {
   display: none;
   border-radius: 8px;
+  max-width: 100%;
+  height: auto;
 }
 
 .carousel-image.active {
@@ -115,6 +119,22 @@ h1 {
   background: rgba(0, 0, 0, 0.7);
 }
 
+.download-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #007aff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #007aff;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.download-button:hover {
+  background: #007aff;
+  color: #fff;
+}
+
 /* Video Gallery */
 .video-gallery iframe {
   width: 100%;
@@ -127,6 +147,7 @@ h1 {
 /* Social Links Styling */
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
@@ -162,8 +183,12 @@ h1 {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
+  .carousel-container {
+      flex-direction: column;
+  }
+
   .carousel-image {
-      width: 100%;
+      max-width: 100%;
       height: auto;
   }
 
@@ -182,5 +207,15 @@ h1 {
 
   .event-block h2 {
       font-size: 24px;
+  }
+
+  .social-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .social-icon {
+      font-size: 14px;
+      padding: 6px 8px;
   }
 }
