@@ -131,81 +131,40 @@ const projects = [
     image: 'Assets/media/portfolio/desk.png',
     name: 'Desktop Organizing Script',
     date: 'Oct 24, 2024 - Nov 7, 2024',
-    description: 'I built this Python script to keep my desktop clean by automatically organizing files from the Downloads folder into categorized folders on my Desktop...',
+    description: 'I built this Python script to keep my desktop clean by automatically organizing files from the Downloads folder into categorized folders on my Desktop. Using the watchdog library, the script monitors Downloads for new files and instantly sorts them into folders based on type, such as Images, Videos, Documents...etc. It’s a continuous process that runs in the background, making file management hands-free and time-efficient. This project taught me about file handling, automation, and real-time monitoring with the Watchdog API, creating a streamlined workspace.',
     url: 'https://github.com/Justin-Liao23-e/Desktop-Organizer'
   },
   {
     image: 'Assets/media/portfolio/stock.png',
     name: 'Stock Market Browser Extension',
     date: 'Oct 18, 2024 - Oct 24, 2024',
-    description: 'I developed this browser extension...',
+    description: 'I developed this browser extension to track real-time stock prices and display key data from daily to yearly changes. Using JavaScript, HTML, and CSS, the extension pulls data from the Alpha Vantage API and ensures that the stock list is saved using the Chrome Storage API, even after closing the browser. It features automatic updates every 30 minutes during market hours and a manual refresh button for instant updates. Through this project, I gained experience with API integration, persistent data storage, and UI/UX improvements. Feel free to try it out on my GitHub repo.',
     url: 'https://github.com/Justin-Liao23-e/Stock-Market-Browser-Extension'
   },
   {
     image: 'Assets/media/portfolio/ttt.png',
     name: 'C++ TikTakToe',
     date: 'Apr 2, 2024',
-    description: 'This console-based Tik-Tak-Toe game challenges two players...',
+    description: 'This console-based Tik-Tak-Toe game challenges two players to face off! Built as part of a Codecademy challenge, it was my first real dive into C++. I learned how to manage game logic, update grids dynamically, and use vectors to track moves. This project was a great intro to the low-level structure of C++ and strengthened my confidence in the language’s basics.',
     url: 'https://github.com/Justin-Liao23-e/TikTakToe'
   },
   {
     image: 'Assets/media/portfolio/c$.png',
     name: 'C$ Stalker',
     date: 'Nov 8, 2024 - Nov 25, 2024',
-    description: 'This is a web app that simulates real-time stock trading...',
+    description: 'This is a web app that simulates real-time stock trading using mainly Python and Flask. I co-developed with Ethan Leonard, I focused on front-end enhancements to create an engaging and user-friendly experience. Using IEX API, the app lets users simulate stock trading in a dynamic environment with auto-updating charts, while integrated AI chatbots by ChatGPT offer instant insights and guidance for the user.',
     url: 'https://github.com/ethan-leonard/CS_Stalkers'
   },
   {
     image: 'Assets/media/portfolio/binary.png',
     name: 'Converters: Decimal to Binary, Octal, and Hexadecimal',
     date: 'March 2021',
-    description: 'My coding journey began with this Binary Decimal Converter...',
+    description: 'My coding journey began with this Binary Decimal Converter, a Python tool I created to convert between binary and decimal with flexible precision settings. Developed during my first Python bootcamp back in Taiwan, I expanded to binary-to-octal and binary-to-hexadecimal conversions as I dove deeper into the logic of base conversions. This project sharpened my mathematical thinking, problem-solving, and sparked my passion for programming.',
     url: 'https://github.com/Justin-Liao23-e/Binary-to-Decimal-Converter'
   },
 ];
 
-const interests = [
-  // 5 initial interests (unchanged)...
-  {
-    image: 'Assets/media/...',
-    name: 'Arts',
-    description: 'Capturing the world one frame at a time.',
-    url: 'https://github.com/...'
-  },
-  {
-    image: 'Assets/media/...',
-    name: 'Piano & Singing',
-    description: 'Exploring new cultures and destinations.',
-    url: 'https://github.com/...'
-  },
-  {
-    image: 'images/interest3.jpg',
-    name: 'Family & Friends',
-    description: 'Experimenting with flavors and cuisines.',
-    url: 'https://github.com/...'
-  },
-  {
-    image: 'images/interest4.jpg',
-    name: 'Reading',
-    description: 'Appreciating rhythms and melodies.',
-    url: 'https://github.com/...'
-  },
-  {
-    image: 'images/interest5.jpg',
-    name: 'Investing',
-    description: 'Diving into different worlds through books.',
-    url: 'https://github.com/...'
-  },
-  {
-    image: 'images/interest7.jpg',
-    name: 'Fitness',
-    description: 'Boxing and jogging and gym and golf.',
-    url: 'https://github.com/...'
-  },
-];
-
 let projectsExpanded = false;
-let interestsExpanded = false;
 
 function loadProjects() {
   const projectList = document.getElementById('project-list');
