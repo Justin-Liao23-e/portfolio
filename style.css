@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     transition: background-color 0.5s, color 0.5s;
+    padding-top: 60px;
   }
   
   body {
@@ -30,8 +31,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     flex-wrap: wrap;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* adjust if needed */
+    z-index: 999; /* on top of everything */
+    background-color: #fff; /* your default background */
+    padding: 0 20px;
   }
   
   .logo {
@@ -327,6 +335,10 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  /**********************************************
+   * ORIGINAL CODE (unchanged)
+   **********************************************/
   .project-item {
     flex-direction: column;
     height: auto; /* Allow height to adjust based on content */
@@ -360,9 +372,176 @@ body {
   .intro-text p {
     font-size: 16px;
   }
-}
+
+  /**********************************************
+   * NEW CODE FOR MOBILE NAV & THEME DROPDOWNS
+   **********************************************/
+
+  /* 1) Hide your original desktop nav links & theme switcher on phone */
+  .nav-links,
+  .theme-switcher {
+    display: none !important;  /* We do not remove them; just hide on small screens */
+  }
+
+  /* 2) Show mobile icons (hamburger & theme icon) */
+  .mobile-icons {
+    display: flex;
+    gap: 16px;
+    margin-right: 16px;
+    align-items: center;
+  }
+
+  .mobile-theme-btn,
+  .mobile-hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit; /* Inherits from nav or body theme color */
+  }
+
+  /* 3) MOBILE NAV DROPDOWN - slides down from top */
+  .mobile-nav-dropdown {
+    position: fixed;
+    top: 60px;       /* Appear below the fixed nav bar */
+    left: 0;
+    right: 0;
+    height: 0;       /* Start collapsed */
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 998;    /* Just below the nav bar (z-index: 999) */
+    /* We'll set the background in the theme-based rules (dark-mode, etc.) */
+  }
+
+  /* .show class expands the dropdown */
+  .mobile-nav-dropdown.show {
+    height: auto;  /* Expands to fit the list items */
+  }
+
+  .mobile-nav-dropdown ul {
+    margin: 0;
+    padding: 10px 20px;
+    list-style: none;
+  }
+
+  .mobile-nav-dropdown ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider lines */
+  }
+
+  .mobile-nav-dropdown ul li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    color: inherit;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+
+  .mobile-nav-dropdown ul li a:hover {
+    opacity: 0.7;
+  }
+
+  /* 4) MOBILE THEME DROPDOWN - slides down from top */
+  .mobile-theme-dropdown {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 998;
+    /* Background also depends on theme */
+  }
+
+  .mobile-theme-dropdown.show {
+    height: auto;
+  }
+
+  .mobile-theme-dropdown ul {
+    margin: 0;
+    padding: 10px 20px;
+    list-style: none;
+  }
+
+  .mobile-theme-dropdown ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-theme-dropdown ul li button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  .mobile-theme-dropdown ul li button:hover {
+    opacity: 0.7;
+  }
+
+  /* DROPDOWN defaults: height=0, slide down on .show */
+  .mobile-nav-dropdown,
+  .mobile-theme-dropdown {
+    position: fixed;
+    top: 60px; /* just under the nav bar */
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 998;
+    /* We'll rely on theme-based classes for background color. */
+  }
+
+  .mobile-nav-dropdown.show,
+  .mobile-theme-dropdown.show {
+    height: auto; /* expand */
+  }
+
+  /* List styling for each dropdown */
+  .mobile-nav-dropdown ul,
+  .mobile-theme-dropdown ul {
+    margin: 0;
+    padding: 10px 20px;
+    list-style: none;
+  }
+
+  /* Separator lines between list items */
+  .mobile-nav-dropdown ul li,
+  .mobile-theme-dropdown ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Link/button styles */
+  .mobile-nav-dropdown ul li a,
+  .mobile-theme-dropdown ul li button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .mobile-nav-dropdown ul li a:hover,
+  .mobile-theme-dropdown ul li button:hover {
+    opacity: 0.7;
+  }
+} /* end of @media (max-width: 768px) */
+
 
 @media (min-width: 769px) {
+  body {
+    padding-top: 60px; /* matches your desktop nav height */
+  }
+
   .project-item img {
     width: 400px; /* Increased width to 400px */
     height: auto; /* Adjust height automatically */
@@ -370,6 +549,21 @@ body {
 
   .project-item {
     height: auto; /* Allow container height to adjust based on content */
+  }
+
+  /* Keep your desktop nav as is */
+  .nav-links {
+    display: flex; /* or inline-flex, or whatever you had */
+  }
+  .theme-switcher {
+    display: flex; /* your original style */
+  }
+
+  /* Hide mobile icons & dropdown on desktop */
+  .mobile-icons,
+  .mobile-nav-dropdown,
+  .mobile-theme-dropdown {
+    display: none !important;
   }
 }
 
@@ -607,3 +801,48 @@ body.dark-mode .project-item img {
     font-size: 18px;
     line-height: 1.6;
   }
+
+  /* Light Mode (default) */
+body.light-mode nav {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .mobile-nav-dropdown,
+body.light-mode .mobile-theme-dropdown {
+  background-color: #f2f2f2; /* slightly gray or #fff */
+  color: #000;
+}
+
+/* Dark Mode */
+body.dark-mode nav {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+body.dark-mode .mobile-nav-dropdown,
+body.dark-mode .mobile-theme-dropdown {
+  background-color: #222; /* or #000 */
+  color: #fff;
+}
+
+/* Disco Mode 
+   If you want the nav to also animate, 
+   or just keep it a single color changing, up to you. 
+   For a simpler approach, use a bright background
+   or a single animation color. Example below:
+*/
+
+body.disco-mode nav {
+  background: rgba(50, 50, 50, 0.4); /* A dark translucent color */
+  color: #fff;
+  backdrop-filter: blur(8px) saturate(1.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.disco-mode .mobile-nav-dropdown,
+body.disco-mode .mobile-theme-dropdown {
+  background: rgba(50, 50, 50, 0.6);
+  color: #fff;
+  backdrop-filter: blur(8px) saturate(1.5);
+}
