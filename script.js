@@ -114,20 +114,6 @@ if (muteButton) {
 const projects = [
   // 5 initial projects (unchanged)...
   {
-    image: 'Assets/media/portfolio/ip.png',
-    name: 'Task AI [in progress...]',
-    date: 'Oct. 20, 2024 - Present',
-    description: 'tbd...',
-    url: 'https://github.com/Justin-Liao23-e/Task-AI'
-  },
-  {
-    image: 'Assets/media/portfolio/ip.png',
-    name: 'Python Web Scraper [in progress...]',
-    date: 'Oct. 20, 2024 - Present',
-    description: 'tbd...',
-    url: 'https://github.com/Justin-Liao23-e/Web-Data-Scraper'
-  },
-  {
     image: 'Assets/media/portfolio/desk.png',
     name: 'Desktop Organizing Script',
     date: 'Oct 24, 2024 - Nov 7, 2024',
