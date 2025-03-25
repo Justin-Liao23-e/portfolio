@@ -156,7 +156,7 @@ const projects = [
     url: 'https://github.com/ethan-leonard/CS_Stalkers'
   },
   {
-    image: 'Assets/media/BCACMLogo.png',
+    image: 'https://acm-website-storage.s3.us-west-2.amazonaws.com/BC_ACM_Logo_Dark_Mode.png',
     name: 'BC Computer Programming Club Website - V1',
     date: 'Apr 1, 2023 - Mar 1, 2024',
     description: 'I co-developed the club website for BC Computer Programming Club (now BC ACM), starting as a member in April 2023 and later being promoted to VP in July 2023. Collaborating with four leaders, I built our first ACM club website from scratch using HTML, CSS, JavaScript, Node.js, and Express.js, which increased club membership to over 250 students. I handled the front-end development and implemented the back-end for the contact page, while also guiding students in setting up collaborative Git environments and creating their portfolio websites.',
