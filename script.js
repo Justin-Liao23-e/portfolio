@@ -121,6 +121,13 @@ const projects = [
     url: 'https://reunify.tech/'
   },
   {
+    image: 'Assets/media/portfolio/ip.png',
+    name: 'UWB Innovators Hub Website',
+    date: '',
+    description: '',
+    url: 'https://innovatorshubus.my.canva.site/'
+  },
+  {
     image: 'Assets/media/portfolio/desk.png',
     name: 'Desktop Organizing Script',
     date: 'Oct 24, 2024 - Nov 7, 2024',
@@ -144,9 +151,16 @@ const projects = [
   {
     image: 'Assets/media/portfolio/c$.png',
     name: 'C$ Stalker',
-    date: 'Nov 8, 2024 - Nov 25, 2024',
+    date: 'Nov 8, 2023 - Nov 25, 2023',
     description: 'This is a web app that simulates real-time stock trading using mainly Python and Flask. I co-developed with Ethan Leonard, I focused on front-end enhancements to create an engaging and user-friendly experience. Using IEX API, the app lets users simulate stock trading in a dynamic environment with auto-updating charts, while integrated AI chatbots by ChatGPT offer instant insights and guidance for the user.',
     url: 'https://github.com/ethan-leonard/CS_Stalkers'
+  },
+  {
+    image: 'Assets/media/BCACMLogo.png',
+    name: 'BC Computer Programming Club Website - V1',
+    date: 'Apr 1, 2023 - Mar 1, 2024',
+    description: 'I co-developed the club website for BC Computer Programming Club (now BC ACM), starting as a member in April 2023 and later being promoted to VP in July 2023. Collaborating with four leaders, I built our first ACM club website from scratch using HTML, CSS, JavaScript, Node.js, and Express.js, which increased club membership to over 250 students. I handled the front-end development and implemented the back-end for the contact page, while also guiding students in setting up collaborative Git environments and creating their portfolio websites.',
+    url: 'https://www.bccomputerprogramingclub.com/'
   },
   {
     image: 'Assets/media/portfolio/binary.png',
@@ -331,3 +345,25 @@ if (discoMobile) {
     mobileThemeDropdown.classList.remove('show');
   });
 }
+
+// Function to detect scrollable content areas and add appropriate class
+function detectScrollableContent() {
+  const contentDivs = document.querySelectorAll('.interest-item .content');
+  
+  contentDivs.forEach(div => {
+    // Check if content exceeds container height
+    if (div.scrollHeight > div.clientHeight) {
+      div.classList.add('scrollable');
+    } else {
+      div.classList.remove('scrollable');
+    }
+  });
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', function() {
+  detectScrollableContent();
+  
+  // Also run when window is resized to handle responsive changes
+  window.addEventListener('resize', detectScrollableContent);
+});
