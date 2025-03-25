@@ -1,9 +1,5 @@
-/************************************************************
- * =============== ORIGINAL CODE (Unchanged) ===============
- * 1) THEME SWITCHING & MUSIC
-************************************************************/
 const body = document.body;
-let discoMusic; // Created dynamically (was in original code)
+let discoMusic; // Created dynamically
 const musicControl = document.getElementById('music-control');
 const muteButton = document.getElementById('mute-button');
 
@@ -48,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Theme switcher event listeners for DESKTOP
-// (unchanged; these are the "Light Mode", "Dark Mode", "Disco Mode" buttons)
+// "Light Mode", "Dark Mode", "Disco Mode" buttons
 document.getElementById('light-mode').addEventListener('click', () => setTheme('light-mode'));
 document.getElementById('dark-mode').addEventListener('click', () => setTheme('dark-mode'));
 document.getElementById('disco-mode').addEventListener('click', () => setTheme('disco-mode'));
@@ -108,11 +104,22 @@ if (muteButton) {
   });
 }
 
-/************************************************************
- * 2) PROJECTS & INTERESTS (ORIGINAL CODE)
-************************************************************/
+// 2) PROJECTS & INTERESTS
 const projects = [
-  // 5 initial projects (unchanged)...
+  {
+    image: 'https://media.licdn.com/dms/image/v2/D562DAQGBCi1809PsKg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1721053754347?e=1743480000&v=beta&t=lfRl8ny2z9bMUWrg1wdtreaTNZ9kXOjEYqTd-vMU0Q0',
+    name: 'VolunTier',
+    date: 'Mar 1, 2025 - Present',
+    description: 'A startup project working in Stealth, expected launch date: end of Spring 25.',
+    url: 'https://volun-tier.com/'
+  },
+  {
+    image: 'https://media.licdn.com/dms/image/v2/D562DAQGBCi1809PsKg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1721053754347?e=1743480000&v=beta&t=lfRl8ny2z9bMUWrg1wdtreaTNZ9kXOjEYqTd-vMU0Q0',
+    name: 'Reunify AI',
+    date: 'Jun 1, 2024 - Present',
+    description: 'A startup project working in Stealth, expected launch date: end of Summer 25.',
+    url: 'https://reunify.tech/'
+  },
   {
     image: 'Assets/media/portfolio/desk.png',
     name: 'Desktop Organizing Script',
@@ -224,9 +231,7 @@ function toggleInterests() {
   loadInterests();
 }
 
-/************************************************************
- * 3) CAROUSEL (ORIGINAL CODE)
-************************************************************/
+// 3) CAROUSEL (ORIGINAL CODE)
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-image');
 const totalImages = images.length;
@@ -253,9 +258,7 @@ if (prevButton && nextButton) {
   });
 }
 
-/************************************************************
- * 4) ENSURE MUSIC CONTINUES ACROSS PAGE NAVIGATIONS
-************************************************************/
+// 4) ENSURE MUSIC CONTINUES ACROSS PAGE NAVIGATIONS
 window.addEventListener('beforeunload', () => {
   if (discoMusic && !discoMusic.paused) {
     localStorage.setItem('isDiscoMusicPlaying', 'true');
@@ -265,11 +268,8 @@ window.addEventListener('beforeunload', () => {
 });
 
 
-/************************************************************
- * =============== NEW CODE FOR MOBILE DROPDOWNS ============
- * (Replacing old sidebars with a top-down approach)
-************************************************************/
 
+// MOBILE DROPDOWNS
 // Mobile icon elements
 const mobileHamburger = document.querySelector('.mobile-hamburger');
 const mobileThemeBtn = document.querySelector('.mobile-theme-btn');
