@@ -1,159 +1,179 @@
-/* Fonts and Basic Styles */
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #007aff;
+  --primary-hover: #005bb5;
+  --light-bg: #ffffff;
+  --light-text: #000000;
+  --dark-bg: #000000;
+  --dark-text: #ffffff;
+  --transition-speed: 0.3s;
+  --border-radius: 20px;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --nav-height: 60px;
+}
+
+/* Base Styles */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    transition: background-color 0.5s, color 0.5s;
-    padding-top: 60px;
-  }
-  
-  body {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  /* Navigation */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px; /* adjust if needed */
-    z-index: 999; /* on top of everything */
-    background-color: #fff; /* your default background */
-    padding: 0 20px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    font-size: 18px;
-    position: relative;
-    padding: 5px;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: currentColor;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s;
-  }
-  
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-  
-  .nav-links a.active::after {
-    width: 100%;
-  }
-  
-  .nav-links a:hover {
-    color: #007aff;
-  }
-  
-  .theme-switcher {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .theme-switcher button {
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    background: none;
-    font-size: 16px;
-    transition: color 0.3s;
-    color: inherit;
-  }
-  
-  .theme-switcher button:hover {
-    color: #007aff;
-  }
-  
-  /* Main Content */
-  main {
-    padding: 50px 20px;  
-  }
-  
-  .projects{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+  padding-top: var(--nav-height);
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Theme Variations */
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.disco-mode {
+  animation: discoBackground 20s infinite;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 999;
+  padding: 0 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 18px;
+  position: relative;
+  padding: 5px;
+  transition: color var(--transition-speed);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  left: 0;
+  bottom: -5px;
+  transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-switcher button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 16px;
+  transition: color var(--transition-speed);
+  color: inherit;
+}
+
+.theme-switcher button:hover {
+  color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+  padding: 50px 20px;
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 /* Project Items */
 .project-item {
   position: relative;
   overflow: hidden;
   width: 100%;
   background: linear-gradient(135deg, #e6e6e6, #ffffff);
-  padding: 0;
-  border-radius: 20px; 
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
   display: flex;
   align-items: flex-start;
   margin-bottom: 30px;
-  cursor: default; /* Default cursor */
+  cursor: default;
 }
 
-/* Hover effect for projects */
 .project-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow for more emphasis */
+  box-shadow: var(--shadow);
 }
 
-/* Images within Project */
 .project-item img {
-  width: 300px; 
+  width: 300px;
   height: auto;
   object-fit: cover;
-  border-radius: 20px 0 0 20px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  transition: transform var(--transition-speed);
 }
 
 .project-item:hover img {
   transform: scale(1.05);
 }
 
-/* Text Content within Project */
 .project-item .content {
   padding: 20px;
   flex: 1;
@@ -162,24 +182,23 @@ body {
   overflow: hidden;
 }
 
-/* Project Name and Date */
 .project-item h2 {
   font-size: 24px;
   margin: 0;
   color: #333;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color var(--transition-speed);
   cursor: pointer;
 }
 
 .project-item h2:hover {
-  color: #007aff; /* Same blue as "Load More" button */
+  color: var(--primary-color);
 }
 
 .project-name {
   text-decoration: none;
   color: inherit;
-  cursor: pointer; /* Pointer cursor on hover */
+  cursor: pointer;
 }
 
 .project-date {
@@ -188,180 +207,441 @@ body {
   margin-bottom: 10px;
 }
 
-/* Project Description */
 .project-description {
   font-size: 16px;
   color: #666;
   line-height: 1.4;
-  max-height: 3.6em; /* Limit to 3 lines */
+  max-height: 3.6em;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  cursor: text; /* I-beam cursor */
+  transition: max-height var(--transition-speed) ease;
+  cursor: text;
 }
 
-/* Expanded Description */
 .project-description.expanded {
   max-height: none;
 }
 
-/* View More Link */
 .view-more {
   display: inline-block;
   margin-top: 10px;
   font-size: 14px;
-  color: #007aff;
+  color: var(--primary-color);
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color var(--transition-speed);
 }
 
 .view-more:hover {
-  color: #01458a;
+  color: var(--primary-hover);
 }
 
-.project-item h2 {
-  font-size: 28px;
-  margin: 0 0 10px;
-  color: #333;
-  font-weight: 600;
-}
-
-.project-item p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.6;
-}
-
-/* Restyled Load More/Less Button */
+/* Load More Button */
 .load-more {
-  padding: 15px 180px; /* Increased padding for a longer button */
+  padding: 15px 180px;
   font-size: 18px;
-  background: #007aff;
+  background: var(--primary-color);
   color: #fff;
   border: none;
-  border-radius: 10px; /* Less rounded edges */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  transition: background var(--transition-speed), transform var(--transition-speed);
   margin: 40px auto 0;
   display: block;
-  width: fit-content; /* Allow button to fit content */
+  width: fit-content;
 }
 
 .load-more:hover {
-  background: #005bb5;
+  background: var(--primary-hover);
   transform: translateY(-5px);
 }
 
 .load-more:active {
   transform: translateY(0);
 }
-  
-  /* Contact */
-  .contact {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 30px;
-  }
-  
-  .contact input, .contact textarea {
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid currentColor;
-    border-radius: 5px;
-    background: transparent;
-    color: inherit;
-    transition: border-color 0.3s, background-color 0.3s;
-  }
-  
-  .contact input:focus, .contact textarea:focus {
-    outline: none;
-    border-color: #007aff;
-    background-color: rgba(0, 122, 255, 0.1);
-  }
-  
-  .contact button {
-    padding: 15px;
-    font-size: 18px;
-    background: #007aff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .contact button:hover {
-    background: #005bb5;
-  }
-  
-  .contact .social-media {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .contact .social-media a {
-    font-size: 32px;
-    color: inherit;
-    transition: color 0.3s;
-  }
-  
-  .contact .social-media a:hover {
-    color: #007aff;
-  }
-  
-/* Responsive Design Adjustments */
-@media (max-width: 1024px) {
-  .project-item {
-      flex-direction: column; /* Items stack vertically on smaller screens */
-      align-items: flex-start; /* Align content to the top */
-  }
 
-  .project-item img {
-      width: 100%; /* Make image take full width */
-      border-radius: 20px 20px 0 0; /* Adjust border radius for vertical stacking */
-  }
+/* Contact Section */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .project-item .content {
-      padding: 20px;
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact input, .contact textarea {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed);
+}
+
+.contact input:focus, .contact textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.contact button {
+  padding: 15px;
+  font-size: 18px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+
+.contact button:hover {
+  background: var(--primary-hover);
+}
+
+.contact .social-media {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact .social-media a {
+  font-size: 32px;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+.contact .social-media a:hover {
+  color: var(--primary-color);
+}
+
+/* Home Page Carousel */
+.home-intro {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 500px;
+  flex: 1;
+}
+
+.carousel-image {
+  display: none;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: calc(100% + 40px);
+  left: -20px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #000;
+  padding: 10px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.carousel-buttons button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel-buttons i {
+  font-size: 24px;
+}
+
+.intro-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.intro-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Theme-specific Styling */
+/* Light Theme (Default) */
+body.light-mode nav {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .project-item {
+  background: #f9f9f9;
+  color: #000;
+}
+
+body.light-mode .mobile-nav-dropdown,
+body.light-mode .mobile-theme-dropdown {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* Dark Theme */
+body.dark-mode nav {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .project-item {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+body.dark-mode .project-item h2 {
+  color: #fff;
+}
+
+body.dark-mode .project-item p {
+  color: #ccc;
+}
+
+body.dark-mode .project-item .view-more {
+  color: #4da6ff;
+}
+
+body.dark-mode .project-item .view-more:hover {
+  color: #80c1ff;
+}
+
+body.dark-mode .project-item img {
+  filter: brightness(1.1);
+}
+
+body.dark-mode .mobile-nav-dropdown,
+body.dark-mode .mobile-theme-dropdown {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Disco Theme */
+body.disco-mode nav {
+  background: rgba(50, 50, 50, 0.4);
+  color: #fff;
+  backdrop-filter: blur(8px) saturate(1.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.disco-mode .project-item {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.disco-mode .mobile-nav-dropdown,
+body.disco-mode .mobile-theme-dropdown {
+  background: rgba(50, 50, 50, 0.6);
+  color: #fff;
+  backdrop-filter: blur(8px) saturate(1.5);
+}
+
+/* Music Control for Disco Mode */
+#music-control {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+#music-control button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  cursor: pointer;
+  color: inherit;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+#music-control button:hover {
+  background: currentColor;
+  color: #fff;
+}
+
+/* Animated Line */
+.animated-line {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(270deg, transparent, currentColor, transparent);
+  background-size: 200%;
+  animation: shine 3s linear infinite;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+/* Mobile Navigation Elements */
+.mobile-icons {
+  display: none;
+}
+
+.mobile-nav-dropdown,
+.mobile-theme-dropdown {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  z-index: 998;
+}
+
+.mobile-nav-dropdown.show,
+.mobile-theme-dropdown.show {
+  height: auto;
+}
+
+.mobile-nav-dropdown ul,
+.mobile-theme-dropdown ul {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.mobile-nav-dropdown ul li,
+.mobile-theme-dropdown ul li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-nav-dropdown ul li a,
+.mobile-theme-dropdown ul li button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  padding: 10px 0;
+  color: inherit;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-nav-dropdown ul li a:hover,
+.mobile-theme-dropdown ul li button:hover {
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes discoBackground {
+  0% {
+    background-color: #ff5733;
+    color: #ffffff;
+  }
+  20% {
+    background-color: #33ff57;
+    color: #000000;
+  }
+  40% {
+    background-color: #3357ff;
+    color: #ffffff;
+  }
+  60% {
+    background-color: #f333ff;
+    color: #000000;
+  }
+  80% {
+    background-color: #ff33a6;
+    color: #ffffff;
+  }
+  100% {
+    background-color: #ff5733;
+    color: #ffffff;
   }
 }
 
-@media (max-width: 768px) {
+@keyframes shine {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
 
-  /**********************************************
-   * ORIGINAL CODE (unchanged)
-   **********************************************/
+/* Media Queries */
+@media (max-width: 1024px) {
   .project-item {
     flex-direction: column;
-    height: auto; /* Allow height to adjust based on content */
   }
 
   .project-item img {
     width: 100%;
-    height: 200px; /* Fixed height for images */
-    border-radius: 20px 20px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Show mobile navigation */
+  .nav-links, .theme-switcher {
+    display: none !important;
   }
 
-  .project-item .content {
-    padding: 15px;
+  .mobile-icons {
+    display: flex;
+    gap: 16px;
+    margin-right: 16px;
+    align-items: center;
   }
 
+  .mobile-theme-btn, .mobile-hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  /* Project styling for mobile */
+  .project-item img {
+    height: 200px;
+  }
+
+  /* Home intro for mobile */
   .home-intro {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .carousel-container,
-  .intro-text {
+  .carousel-container, .intro-text {
     max-width: 100%;
   }
 
@@ -372,194 +652,15 @@ body {
   .intro-text p {
     font-size: 16px;
   }
+}
 
-  /**********************************************
-   * NEW CODE FOR MOBILE NAV & THEME DROPDOWNS
-   **********************************************/
-
-  /* 1) Hide your original desktop nav links & theme switcher on phone */
-  .nav-links,
-  .theme-switcher {
-    display: none !important;  /* We do not remove them; just hide on small screens */
-  }
-
-  /* 2) Show mobile icons (hamburger & theme icon) */
-  .mobile-icons {
-    display: flex;
-    gap: 16px;
-    margin-right: 16px;
-    align-items: center;
-  }
-
-  .mobile-theme-btn,
-  .mobile-hamburger {
-    font-size: 24px;
-    cursor: pointer;
-    color: inherit; /* Inherits from nav or body theme color */
-  }
-
-  /* 3) MOBILE NAV DROPDOWN - slides down from top */
-  .mobile-nav-dropdown {
-    position: fixed;
-    top: 60px;       /* Appear below the fixed nav bar */
-    left: 0;
-    right: 0;
-    height: 0;       /* Start collapsed */
-    overflow: hidden;
-    transition: height 0.3s ease;
-    z-index: 998;    /* Just below the nav bar (z-index: 999) */
-    /* We'll set the background in the theme-based rules (dark-mode, etc.) */
-  }
-
-  /* .show class expands the dropdown */
-  .mobile-nav-dropdown.show {
-    height: auto;  /* Expands to fit the list items */
-  }
-
-  .mobile-nav-dropdown ul {
-    margin: 0;
-    padding: 10px 20px;
-    list-style: none;
-  }
-
-  .mobile-nav-dropdown ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider lines */
-  }
-
-  .mobile-nav-dropdown ul li a {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    color: inherit;
-    text-decoration: none;
-    padding: 10px 0;
-  }
-
-  .mobile-nav-dropdown ul li a:hover {
-    opacity: 0.7;
-  }
-
-  /* 4) MOBILE THEME DROPDOWN - slides down from top */
-  .mobile-theme-dropdown {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-    z-index: 998;
-    /* Background also depends on theme */
-  }
-
-  .mobile-theme-dropdown.show {
+@media (min-width: 769px) {
+  .project-item img {
+    width: 400px;
     height: auto;
   }
 
-  .mobile-theme-dropdown ul {
-    margin: 0;
-    padding: 10px 20px;
-    list-style: none;
-  }
-
-  .mobile-theme-dropdown ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .mobile-theme-dropdown ul li button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    color: inherit;
-    background: none;
-    border: none;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-
-  .mobile-theme-dropdown ul li button:hover {
-    opacity: 0.7;
-  }
-
-  /* DROPDOWN defaults: height=0, slide down on .show */
-  .mobile-nav-dropdown,
-  .mobile-theme-dropdown {
-    position: fixed;
-    top: 60px; /* just under the nav bar */
-    left: 0;
-    right: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-    z-index: 998;
-    /* We'll rely on theme-based classes for background color. */
-  }
-
-  .mobile-nav-dropdown.show,
-  .mobile-theme-dropdown.show {
-    height: auto; /* expand */
-  }
-
-  /* List styling for each dropdown */
-  .mobile-nav-dropdown ul,
-  .mobile-theme-dropdown ul {
-    margin: 0;
-    padding: 10px 20px;
-    list-style: none;
-  }
-
-  /* Separator lines between list items */
-  .mobile-nav-dropdown ul li,
-  .mobile-theme-dropdown ul li {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  /* Link/button styles */
-  .mobile-nav-dropdown ul li a,
-  .mobile-theme-dropdown ul li button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    color: inherit;
-    background: none;
-    border: none;
-    padding: 10px 0;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .mobile-nav-dropdown ul li a:hover,
-  .mobile-theme-dropdown ul li button:hover {
-    opacity: 0.7;
-  }
-} /* end of @media (max-width: 768px) */
-
-
-@media (min-width: 769px) {
-  body {
-    padding-top: 60px; /* matches your desktop nav height */
-  }
-
-  .project-item img {
-    width: 400px; /* Increased width to 400px */
-    height: auto; /* Adjust height automatically */
-  }
-
-  .project-item {
-    height: auto; /* Allow container height to adjust based on content */
-  }
-
-  /* Keep your desktop nav as is */
-  .nav-links {
-    display: flex; /* or inline-flex, or whatever you had */
-  }
-  .theme-switcher {
-    display: flex; /* your original style */
-  }
-
-  /* Hide mobile icons & dropdown on desktop */
+  /* Hide mobile elements on desktop */
   .mobile-icons,
   .mobile-nav-dropdown,
   .mobile-theme-dropdown {
@@ -569,280 +670,23 @@ body {
 
 @media (max-width: 480px) {
   main {
-      padding: 20px;
+    padding: 20px;
   }
 
   .project-item h2 {
-      font-size: 24px;
-  }
-
-  .project-item p {
-      font-size: 16px;
-  }
-
-  .project-item .view-more, .load-more {
-      font-size: 16px;
-  }
-
-  /* Make the load more button slightly longer on smaller screens */
-  .load-more {
-      padding: 12px 60px;
-      border-radius: 8px; /* Slightly reduce the rounded corners */
-  }
-}
-  
-/* Adjustments for Modes */
-body.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-body.light-mode .project-item {
-  background: #f9f9f9;
-  color: #000000; /* Ensure text is black in light mode */
-}
-
-body.dark-mode {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-body.dark-mode .project-item {
-  background: #1a1a1a;
-  color: #ffffff; /* Ensure text is white in dark mode for contrast */
-}
-
-body.dark-mode .project-item h2 {
-  color: #ffffff; /* Make sure the headings are also white for contrast */
-}
-
-body.dark-mode .project-item p {
-  color: #cccccc; /* A slightly lighter color for paragraph text in dark mode */
-}
-
-body.dark-mode .project-item .view-more {
-  color: #4da6ff; /* A contrasting blue color for the "View More" links */
-}
-
-body.dark-mode .project-item .view-more:hover {
-  color: #80c1ff; /* Slightly lighter blue on hover */
-}
-
-/* Ensure images remain bright in dark mode */
-body.dark-mode .project-item img {
-  filter: brightness(1.1); /* Slightly brighten the images in dark mode */
-}
-  
-  body.disco-mode {
-    animation: discoBackground 20s infinite;
-  }
-  
-  @keyframes discoBackground {
-    0% {
-      background-color: #ff5733;
-      color: #ffffff;
-    }
-    20% {
-      background-color: #33ff57;
-      color: #000000;
-    }
-    40% {
-      background-color: #3357ff;
-      color: #ffffff;
-    }
-    60% {
-      background-color: #f333ff;
-      color: #000000;
-    }
-    80% {
-      background-color: #ff33a6;
-      color: #ffffff;
-    }
-    100% {
-      background-color: #ff5733;
-      color: #ffffff;
-    }
-  }
-  
-  /* Adjust elements during Disco Mode */
-  body.disco-mode, body.disco-mode h1, body.disco-mode h2, body.disco-mode p, body.disco-mode a, body.disco-mode .logo, body.disco-mode .nav-links a, body.disco-mode .theme-switcher button, body.disco-mode .contact input, body.disco-mode .contact textarea, body.disco-mode .contact .social-media a, body.disco-mode footer, body.disco-mode .load-more, body.disco-mode #music-control button {
-    color: inherit;
-    transition: color 0.5s, background-color 0.5s;
-  }
-  
-  body.disco-mode .project-item {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  body.disco-mode .contact input, body.disco-mode .contact textarea {
-    border: 1px solid currentColor;
-  }
-  
-  body.disco-mode .animated-line {
-    background: linear-gradient(90deg, transparent, currentColor, transparent);
-  }
-  
-  /* Mute/Unmute Button */
-  #music-control {
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  #music-control button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background: none;
-    border: 2px solid currentColor;
-    border-radius: 5px;
-    cursor: pointer;
-    color: inherit;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  #music-control button:hover {
-    background: currentColor;
-    color: #fff;
-  }
-  
-  /* Animated Shining Line */
-  .animated-line {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 12px;
-    width: 100%;
-    background: linear-gradient(270deg, transparent, currentColor, transparent);
-    background-size: 200%;
-    animation: shine 3s linear infinite;
-  }
-  
-  @keyframes shine {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 16px;
-  }  
-
-  .home-intro {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .carousel-container {
-    position: relative;
-    max-width: 500px;
-    flex: 1;
-  }
-  
-  .carousel-image {
-    display: none;
-    width: 100%;
-    transition: opacity 0.5s ease-in-out;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  
-  .carousel-image.active {
-    display: block;
-  }
-  
-  .carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: calc(100% + 40px);
-    left: -20px;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-  
-  .carousel-buttons button {
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    color: #000;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .carousel-buttons button:hover {
-    background: rgba(255, 255, 255, 1);
-  }
-  
-  .carousel-buttons i {
     font-size: 24px;
   }
 
-  .intro-text {
-    flex: 1;
-    max-width: 500px;
-  }
-  
-  .intro-text h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  .intro-text p {
-    font-size: 18px;
-    line-height: 1.6;
+  .project-item p {
+    font-size: 16px;
   }
 
-  /* Light Mode (default) */
-body.light-mode nav {
-  background-color: #fff;
-  color: #000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-body.light-mode .mobile-nav-dropdown,
-body.light-mode .mobile-theme-dropdown {
-  background-color: #f2f2f2; /* slightly gray or #fff */
-  color: #000;
-}
+  .project-item .view-more, .load-more {
+    font-size: 16px;
+  }
 
-/* Dark Mode */
-body.dark-mode nav {
-  background-color: #000;
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.15);
-}
-body.dark-mode .mobile-nav-dropdown,
-body.dark-mode .mobile-theme-dropdown {
-  background-color: #222; /* or #000 */
-  color: #fff;
-}
-
-/* Disco Mode 
-   If you want the nav to also animate, 
-   or just keep it a single color changing, up to you. 
-   For a simpler approach, use a bright background
-   or a single animation color. Example below:
-*/
-
-body.disco-mode nav {
-  background: rgba(50, 50, 50, 0.4); /* A dark translucent color */
-  color: #fff;
-  backdrop-filter: blur(8px) saturate(1.5);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-body.disco-mode .mobile-nav-dropdown,
-body.disco-mode .mobile-theme-dropdown {
-  background: rgba(50, 50, 50, 0.6);
-  color: #fff;
-  backdrop-filter: blur(8px) saturate(1.5);
+  .load-more {
+    padding: 12px 60px;
+    border-radius: 8px;
+  }
 }
