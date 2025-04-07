@@ -121,11 +121,11 @@ const projects = [
     url: 'https://reunify.tech/'
   },
   {
-    image: 'Assets/media/portfolio/ip.png',
+    image: 'Assets/media/portfolio/UWB Website.png',
     name: 'UWB Innovators Hub Website',
-    date: '',
-    description: '',
-    url: 'https://innovatorshubus.my.canva.site/'
+    date: 'Jan 1, 2024 - Apr 5',
+    description: 'A website I designed and co-developed for the UWB Innovators Hub. The site serves as a platform for students to connect, collaborate, and innovate. It features sections for events, resources, and member profiles. It is reponsive on all devices; this project helped me enhance my web development skills and understand the importance of user experience in design. Go to uwinnvators.com to check it out!',
+    url: 'https://github.com/Innovators-Hub-Incubator/UWB-Website'
   },
   {
     image: 'Assets/media/portfolio/desk.png',
