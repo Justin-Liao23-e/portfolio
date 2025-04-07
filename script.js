@@ -367,3 +367,77 @@ document.addEventListener('DOMContentLoaded', function() {
   // Also run when window is resized to handle responsive changes
   window.addEventListener('resize', detectScrollableContent);
 });
+
+
+// Time Popup Functionality
+const presentButton = document.getElementById('present-button');
+const timePopup = document.getElementById('time-popup');
+const timeDate = document.getElementById('time-date');
+const timeClock = document.getElementById('time-clock');
+
+// Initialize clock variables
+let clockInterval;
+
+// Format the date
+function formatDate(date) {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear().toString().slice(-2); // Get last 2 digits
+  
+  return `${month} ${day}, ${year}`;
+}
+
+// Format the time
+function formatTime(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  
+  // Add leading zeros
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+// Update the clock
+function updateClock() {
+  const now = new Date();
+  timeDate.textContent = formatDate(now);
+  timeClock.textContent = formatTime(now);
+}
+
+// Show the time popup
+function showTimePopup() {
+  timePopup.classList.add('show');
+  updateClock(); // Initial update
+  clockInterval = setInterval(updateClock, 1000); // Update every second
+}
+
+// Hide the time popup
+function hideTimePopup() {
+  timePopup.classList.remove('show');
+  clearInterval(clockInterval); // Stop the clock updates
+}
+
+// Event listeners
+if (presentButton) {
+  presentButton.addEventListener('click', showTimePopup);
+}
+
+// Close the popup when clicking outside the content
+if (timePopup) {
+  timePopup.addEventListener('click', function(event) {
+    // If the click is directly on the overlay (not on the content)
+    if (event.target === timePopup) {
+      hideTimePopup();
+    }
+  });
+}
+
+// Make sure to stop the clock interval when changing pages
+window.addEventListener('beforeunload', function() {
+  clearInterval(clockInterval);
+});

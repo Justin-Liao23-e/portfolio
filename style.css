@@ -846,3 +846,109 @@ background: rgba(50, 50, 50, 0.6);
 color: #fff;
 backdrop-filter: blur(8px) saturate(1.5);
 }
+
+
+/* Present Button Styling */
+.present-button-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#present-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#present-button:hover {
+  background: #005bb5;
+  transform: translateY(-3px);
+}
+
+#present-button:active {
+  transform: translateY(0);
+}
+
+/* Time Popup Styling */
+.time-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-popup.show {
+  display: flex;
+}
+
+.time-popup-content {
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.time-date {
+  font-size: 18px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.time-clock {
+  font-size: 72px;
+  font-weight: 700;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-quote {
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Theme-specific styling for the popup */
+body.light-mode .time-popup-content {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode .time-popup-content {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.disco-mode .time-popup-content {
+  animation: discoPopup 20s infinite;
+  color: #ffffff;
+}
+
+@keyframes discoPopup {
+  0% { background-color: rgba(255, 87, 51, 0.8); }
+  20% { background-color: rgba(51, 255, 87, 0.8); }
+  40% { background-color: rgba(51, 87, 255, 0.8); }
+  60% { background-color: rgba(243, 51, 255, 0.8); }
+  80% { background-color: rgba(255, 51, 166, 0.8); }
+  100% { background-color: rgba(255, 87, 51, 0.8); }
+}
