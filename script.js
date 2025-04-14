@@ -107,11 +107,11 @@ if (muteButton) {
 // 2) PROJECTS & INTERESTS
 const projects = [
   {
-    image: 'https://media.licdn.com/dms/image/v2/D562DAQGBCi1809PsKg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1721053754347?e=1743480000&v=beta&t=lfRl8ny2z9bMUWrg1wdtreaTNZ9kXOjEYqTd-vMU0Q0',
+    image: 'Assets/media/portfolio/VolunTier.png',
     name: 'VolunTier',
     date: 'Mar 1, 2025 - Present',
     description: 'A startup project working in Stealth, expected launch date: end of Spring 25.',
-    url: 'https://volun-tier.com/'
+    url: 'https://github.com/owenisas/VolunTier'
   },
   {
     image: 'https://media.licdn.com/dms/image/v2/D562DAQGBCi1809PsKg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1721053754347?e=1743480000&v=beta&t=lfRl8ny2z9bMUWrg1wdtreaTNZ9kXOjEYqTd-vMU0Q0',
