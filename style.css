@@ -1,12 +1,9 @@
-/* Fonts and Basic Styles */
+/* — Section: Base Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   transition: background-color 0.5s, color 0.5s;
   padding-top: 60px;
-}
-
-body {
   background-color: #ffffff;
   color: #000000;
 }
@@ -26,7 +23,7 @@ ul {
   padding: 0;
 }
 
-/* Navigation */
+/* — Section: Navigation */
 nav {
   display: flex;
   justify-content: space-between;
@@ -101,7 +98,7 @@ nav {
   color: #007aff;
 }
 
-/* Main Content */
+/* — Section: Main Content */
 main {
   padding: 50px 20px;  
 }
@@ -120,7 +117,7 @@ main {
   margin-top: 30px;
 }
 
-/* Project Items */
+/* — Section: Project Items */
 .project-item {
 position: relative;
 overflow: hidden;

@@ -110,7 +110,7 @@ const projects = [
     image: 'Assets/media/portfolio/ip.png',
     name: 'VolunTier',
     date: 'Mar 1, 2025 - Present',
-    description: 'A startup project working in Stealth, expected launch date: end of Spring 25.',
+    description: 'An iOS App for students to find volunteer opportunities that align with their skills and goals. Click to see website and FIgma Prototype, expected launch date: end of Spring 25.',
     url: 'https://volun-tier.com/'
   },
   {
