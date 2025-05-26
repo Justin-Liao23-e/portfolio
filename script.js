@@ -114,13 +114,6 @@ const projects = [
     url: 'https://volun-tier.com/'
   },
   {
-    image: 'Assets/media/portfolio/ip.png',
-    name: 'Reunify AI',
-    date: 'Jun 1, 2024 - Present',
-    description: 'A startup project working in Stealth, expected launch date: end of Summer 25.',
-    url: 'https://reunify.tech/'
-  },
-  {
     image: 'Assets/media/portfolio/UWB Website.png',
     name: 'UWB Innovators Hub Website',
     date: 'Jan 1, 2024 - Apr 5',
