@@ -354,7 +354,7 @@ transform: translateY(0);
 .home-intro {
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .carousel-container,
@@ -363,11 +363,25 @@ transform: translateY(0);
 }
 
 .intro-text h1 {
-  font-size: 32px;
+  font-size: 48px;
+  text-align: left;
 }
 
 .intro-text p {
   font-size: 16px;
+  text-align: left;
+}
+
+/* Mobile carousel dots styling */
+.carousel-dots {
+  justify-content: center;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 20px;
+  height: 8px;
 }
 
 /**********************************************
@@ -567,6 +581,29 @@ body {
 @media (max-width: 480px) {
 main {
     padding: 20px;
+}
+
+/* Intro text mobile styling */
+.intro-text h1 {
+    font-size: 28px;
+    text-align: left;
+}
+
+.intro-text p {
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Carousel dots for very small screens */
+.carousel-dots {
+    justify-content: center;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.carousel-dot {
+    width: 18px;
+    height: 7px;
 }
 
 .project-item h2 {
@@ -783,15 +820,40 @@ footer {
   font-size: 24px;
 }
 
+.carousel-dots {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.carousel-dot {
+  width: 23px;
+  height: 9px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-dot.active {
+  background-color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 .intro-text {
   flex: 1;
   max-width: 500px;
 }
 
 .intro-text h1 {
-  font-size: 36px;
+  font-size: 64px;
   margin-bottom: 20px;
   font-weight: 700;
+  text-align: left;
 }
 
 .intro-text p {

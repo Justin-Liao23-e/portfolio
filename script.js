@@ -107,7 +107,14 @@ if (muteButton) {
 // 2) PROJECTS & INTERESTS
 const projects = [
   {
-    image: 'Assets/media/portfolio/ip.png',
+    image: 'Assets/media/portfolio/VibeChk.jpeg',
+    name: 'VibeChk App',
+    date: 'Jul 1, 2025 - Present',
+    description: 'An iOS app for GenZ to meet creators, founders, engineers, designers, and VCs in real life. Grab a coffee, walk and talk—it\'s all about the vibe. With over 100 users globally, planning a relaunch in April 2025.',
+    url: 'https://vibechk.io/'
+  },
+  {
+    image: 'Assets/media/portfolio/VolunTier.png',
     name: 'VolunTier',
     date: 'Mar 1, 2025 - Present',
     description: 'An iOS App for students to find volunteer opportunities that align with their skills and goals. Click to see website and FIgma Prototype, expected launch date: end of Spring 25.',
@@ -238,32 +245,35 @@ function toggleInterests() {
   loadInterests();
 }
 
-// 3) CAROUSEL (ORIGINAL CODE)
+// 3) CAROUSEL (UPDATED FOR DOT NAVIGATION)
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-image');
+const dots = document.querySelectorAll('.carousel-dot');
 const totalImages = images.length;
 
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
-
 function showImage(index) {
+  // Update images
   images.forEach((img) => {
     img.classList.remove('active');
   });
   images[index].classList.add('active');
+  
+  // Update dots
+  dots.forEach((dot) => {
+    dot.classList.remove('active');
+  });
+  if (dots[index]) {
+    dots[index].classList.add('active');
+  }
 }
 
-if (prevButton && nextButton) {
-  prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+// Add click event listeners to dots
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
     showImage(currentIndex);
   });
-
-  nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalImages;
-    showImage(currentIndex);
-  });
-}
+});
 
 // 4) ENSURE MUSIC CONTINUES ACROSS PAGE NAVIGATIONS
 window.addEventListener('beforeunload', () => {
